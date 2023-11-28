@@ -1,0 +1,11 @@
+<div>
+    <form method="POST" action="/getBooks">
+    <select id="bibleID" name="bibleID">
+        <option value="">Select Bible</option>
+{{ range $key, $value := .payload.Bibles }}
+        <option value={{ $value.ID }}> {{ $value.Name }} </option>
+    {{ end }}
+    </select>
+        <input type="submit" value="Select">
+    </form>
+</div>
